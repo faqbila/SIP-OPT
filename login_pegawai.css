@@ -1,0 +1,114 @@
+:root {
+    --font: "Poppins", sans-serif;
+    --fonts: "Roboto", sans-serif;
+    --font2: "Montserrat", sans-serif;
+    --primary: #20586e;
+    --secondary: #2695d5;
+    --font3: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: rgb(247, 247, 247);
+    font-family: var(--font3);
+    font-size: 16px;
+    background-image: url(user.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login p{
+    font-size: 15px;
+    margin-bottom: -5px;
+
+}
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: var(--fonts);
+}
+
+.login-logo {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.login-form h1 {
+    font-family: var(--font3);
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-form .form-label {
+    font-weight: 500;
+    text-align: left;
+    display: block;
+}
+
+.login-form .form-control {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color:  #049ea3;
+    color: #fffdfd;
+}
+.login-form a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;       /* Menghilangkan garis bawah */
+    font-weight: 600;            /* Tambahkan ketebalan */
+    color: #ffffff;              /* Ubah warna agar terang, sesuaikan dengan background */
+    background-color: #057654;; /* Gunakan warna sekunder */
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.login-form a:hover {
+    background-color:  #049ea3;  /* Warna hover */
+    color: #fff;                 /* Tetap putih saat hover */
+    text-decoration: none;
+}
+

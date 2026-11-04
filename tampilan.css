@@ -1,0 +1,231 @@
+/* ============ GAYA DASAR ============ */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    background-color: #072b33;
+    color: white;
+    padding-top: 30px;
+    position: fixed;
+    width: 220px;
+    top: 0;
+    left: 0;
+}
+
+.sidebar h5 {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.sidebar a {
+    color: #ccc;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #afced5;
+    color: #237173;
+}
+
+/* Konten */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* Header di beranda */
+.blockquote p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    padding-top: 50px;
+    color: #ffffff;
+    background-image: url('Teks paragraf Anda.jpg');
+    background-size: cover;       /* supaya gambar memenuhi area */
+    background-position: center;  /* posisi tengah */
+    background-repeat: no-repeat; /* tidak diulang */
+    height: 350px;
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    line-height: 1.2; /* biar antar baris judul gak terlalu renggang */
+}
+
+.blockquote p span {
+    display: inline-block; /* biar bisa dikasih margin */
+    margin-top: 20px;      /* jarak antara judul utama dengan span */
+    color: #faca17;        /* soft green */
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.1;      /* biar spasi antar baris lebih rapat */
+}
+
+
+
+/* Kartu statistik ringkasan */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+table th, table td {
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card .card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.card h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.panduan-box {
+    background-color: #f4f8fb;
+    border-left: 5px solid #0d6efd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    max-width: 700px;
+}
+
+.panduan-box h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0d6efd;
+}
+
+.filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.panduan-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.panduan-box ul li {
+    margin-bottom: 8px;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media screen and (max-width: 992px) {
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .sidebar h5 {
+        margin-bottom: 15px;
+        margin-left: 45px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+  .sidebar img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100px; /* atau sesuai ukuran logo */
+}
+
+.pesan-error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .blockquote p {
+        font-size: 22px;
+        padding-top: 80px;
+        height: 180px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    table th,
+    table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blockquote p {
+        font-size: 18px;
+        padding-top: 60px;
+        height: 150px;
+    }
+
+    .card .card-title {
+        font-size: 14px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .sidebar a {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    table th,
+    table td {
+        font-size: 11px;
+        padding: 4px;
+    }
+}

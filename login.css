@@ -1,0 +1,548 @@
+/* ==========================================================================
+   1. PREMIUM IMMERSIVE DESIGN SYSTEM & COLOR MATRIX
+   ========================================================================== */
+:root {
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Harvest & Environmental Core Palette */
+    --primary: #2e7d32; /* Nature Green */
+    --primary-light: #4caf50; /* Fresh Green */
+    --primary-dark: #1b5e20;
+    --primary-rgb: 46, 125, 50;
+
+    --secondary: #1976d2; /* Technical Sky Blue */
+    --secondary-light: #64b5f6;
+    --secondary-rgb: 25, 118, 210;
+
+    --accent: #ffd54f; /* Golden Sunrise */
+    --accent-light: #fff9c4;
+
+    --border-color: rgba(46, 125, 50, 0.12);
+    --shadow-sm: 0 4px 10px rgba(27, 94, 32, 0.02);
+    --shadow-md: 0 10px 25px -5px rgba(27, 94, 32, 0.05), 0 8px 10px -6px rgba(27, 94, 32, 0.05);
+    --shadow-lg: 0 20px 45px -10px rgba(27, 94, 32, 0.08);
+
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --border-radius-md: 16px;
+    --border-radius-lg: 20px;
+    --border-radius-full: 9999px;
+}
+
+/* ==========================================================================
+   2. IMMERSIVE PARALLAX DEPTH ENGINE
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+}
+
+body {
+    background-color: #e8f5e9;
+    color: #1e293b;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Parallax viewport container */
+.parallax-container {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Parallax layers */
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    will-change: transform;
+    transition: transform 0.1s ease-out; /* Super smooth tracking */
+}
+
+/* Layer 1: Background (Sky, Sunrise, Clouds) */
+.layer-bg {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 30%, #ffd54f 75%, #e8f5e9 100%);
+    z-index: 2;
+}
+
+/* Layer 2: Midground (Fields, Hills, observation towers) */
+.layer-mid {
+    z-index: 3;
+}
+
+/* Layer 3: Foreground (Lush organic crops, network nodes) */
+.layer-fore {
+    z-index: 4;
+}
+
+/* Layer 4: Interactive Floating Holographic Panels */
+.layer-panels {
+    z-index: 5;
+    pointer-events: auto; /* Active triggers */
+}
+
+/* ==========================================================================
+   3. INDIVIDUAL SCENIC VECTOR ELEMENTS
+   ========================================================================== */
+/* Sun morning light waves */
+.sunrise-sun {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, #fff9c4 0%, #ffd54f 50%, rgba(255, 213, 79, 0) 70%);
+    top: 15%;
+    left: 55%;
+    filter: blur(10px);
+    opacity: 0.85;
+    animation: pulse-sun 8s infinite ease-in-out;
+}
+
+@keyframes pulse-sun {
+    0% { transform: scale(1); opacity: 0.75; }
+    50% { transform: scale(1.1); opacity: 0.95; }
+    100% { transform: scale(1); opacity: 0.75; }
+}
+
+/* Moving Clouds */
+.scenic-cloud {
+    position: absolute;
+    fill: white;
+    opacity: 0.6;
+}
+
+.cloud-1 {
+    width: 180px;
+    top: 10%;
+    left: 10%;
+    animation: move-cloud-slow 45s infinite linear;
+}
+
+.cloud-2 {
+    width: 240px;
+    top: 25%;
+    right: 5%;
+    animation: move-cloud-fast 35s infinite linear;
+}
+
+@keyframes move-cloud-slow {
+    0% { transform: translateX(-120px); }
+    100% { transform: translateX(110vw); }
+}
+
+@keyframes move-cloud-fast {
+    0% { transform: translateX(120px); }
+    100% { transform: translateX(-110vw); }
+}
+
+/* Hovering Agricultural Drone surveillance */
+.scenic-drone {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 64px;
+    height: auto;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+    animation: drone-physics 6s infinite ease-in-out;
+}
+
+@keyframes drone-physics {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Network connection indicators */
+.network-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--primary-light);
+    animation: transmit-pulse 3s infinite ease-in-out;
+}
+
+@keyframes transmit-pulse {
+    0% { transform: scale(1); opacity: 0.6; box-shadow: 0 0 4px var(--primary-light); }
+    50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 16px var(--primary-light); }
+    100% { transform: scale(1); opacity: 0.6; box-shadow: 0 0 4px var(--primary-light); }
+}
+
+/* Nature inspired leaf flows */
+.nature-leaf {
+    position: absolute;
+    color: rgba(46, 125, 50, 0.2);
+    animation: float-nature 14s infinite linear;
+}
+
+@keyframes float-nature {
+    0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: 0.8; }
+    85% { opacity: 0.8; }
+    100% { transform: translateY(-10vh) translateX(100px) rotate(360deg); opacity: 0; }
+}
+
+/* Fluttering butterfly vector details */
+.butterfly {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    fill: var(--secondary-light);
+    animation: flutter-flight 20s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes flutter-flight {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    30% { transform: translate(60px, -80px) rotate(15deg) scale(0.9); }
+    60% { transform: translate(120px, -40px) rotate(-10deg) scale(1.1); }
+    100% { transform: translate(180px, -120px) rotate(5deg) scale(1); }
+}
+
+/* ==========================================================================
+   4. HOLOGRAPHIC DATA OVERLAY PANELS
+   ========================================================================== */
+.hologram-panel {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    color: #334155;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: auto; /* Active hover triggers */
+}
+
+.hologram-panel:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg), 0 10px 20px rgba(46, 125, 50, 0.05);
+    border-color: rgba(46, 125, 50, 0.25);
+}
+
+.hologram-left {
+    left: 8%;
+    top: 30%;
+    width: 260px;
+}
+
+.hologram-right {
+    right: 8%;
+    top: 40%;
+    width: 260px;
+}
+
+.holo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+    padding-bottom: 8px;
+}
+
+.holo-icon {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--primary);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.holo-title h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.holo-title span {
+    font-size: 0.65rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.holo-stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.05);
+    padding-bottom: 6px;
+}
+
+.holo-stat-row span:first-child {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.holo-stat-row span:last-child {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Highlighted Vector mock charts inside holo card */
+.holo-chart-svg {
+    width: 100%;
+    height: 40px;
+    stroke: var(--secondary);
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ==========================================================================
+   5. WHITE GLASSMORPHIC LOGIN CARD
+   ========================================================================== */
+.login-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 48px 40px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.login-card:hover {
+    box-shadow: 0 30px 60px -12px rgba(46, 125, 50, 0.12), var(--shadow-lg);
+    border-color: rgba(46, 125, 50, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Top Accent Forest Green Stripe */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* Brand Header */
+.brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.brand-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+    margin-bottom: 16px;
+    animation: float-logo 6s infinite ease-in-out;
+}
+
+.brand-subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #475569; /* Slate 600 */
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   6. FORM FIELDS & CUSTOM LIGHT INPUTS
+   ========================================================================== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155; /* Slate 700 */
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-left {
+    position: absolute;
+    left: 16px;
+    color: #64748b; /* Slate 500 */
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+
+.form-control-custom {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(46, 125, 50, 0.18);
+    border-radius: var(--border-radius-md);
+    color: #1e293b;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.form-control-custom::placeholder {
+    color: #94a3b8;
+}
+
+.form-control-custom:focus {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.12);
+}
+
+.form-control-custom:focus + .input-icon-left {
+    color: var(--primary);
+}
+
+/* Password Toggle Visibility Button */
+.password-toggle-btn {
+    position: absolute;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.password-toggle-btn:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   7. INTERACTIVE BUTTON & BACK HOME LINKS
+   ========================================================================== */
+.btn-submit-glow {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-submit-glow:hover {
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #1b5e20, #0284c7);
+}
+
+.btn-submit-glow:active {
+    transform: translateY(0px);
+}
+
+.back-home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #475569;
+    text-decoration: none;
+    margin-top: 28px;
+    transition: var(--transition-smooth);
+}
+
+.back-home-link:hover {
+    color: var(--primary);
+}
+
+.back-home-link i {
+    transition: var(--transition-smooth);
+}
+
+.back-home-link:hover i {
+    transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hologram-panel {
+        display: none; /* Hide holographic side cards on smaller screens to prioritize forms */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 36px 24px;
+    }
+    
+    .brand-title {
+        font-size: 1.8rem;
+    }
+}
+
